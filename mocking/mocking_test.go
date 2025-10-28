@@ -67,9 +67,9 @@ func (s *SpyCountdownOperations) Sleep() {
 	s.Calls = append(s.Calls, sleep)
 }
 
-func (s *SpyCountdownOperations) Write(_ []byte) (n int, err error) {
+func (s *SpyCountdownOperations) Write(b []byte) (int, error) {
 	s.Calls = append(s.Calls, write)
-	return n, err
+	return len(b), nil
 }
 
 const (

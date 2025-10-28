@@ -1,13 +1,14 @@
-package dependencyinjection
+package dependencyinjection_test
 
 import (
 	"bytes"
+	dependencyinjection "learn-go-with-tests/dependency-injection"
 	"testing"
 )
 
 func TestGreet(t *testing.T) {
 	buffer := bytes.Buffer{}
-	err := Greet(&buffer, "Chris")
+	err := dependencyinjection.Greet(&buffer, "Chris")
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 	}
